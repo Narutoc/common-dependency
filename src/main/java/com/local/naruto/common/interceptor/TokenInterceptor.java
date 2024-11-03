@@ -117,13 +117,13 @@ public class TokenInterceptor implements HandlerInterceptor {
         }
 
         // 用户已注销，给出提示
-        String account = TokenUtils.getUserAccountByToken(headerToken);
-        if (StringUtils.isEmpty(getCacheToken(account))) {
-            AuthenticationException authException = new AuthenticationException(USER_LOGOUT);
-            response.setStatus(HttpStatus.SC_UNAUTHORIZED);
-            response.getOutputStream().write(JSON.toJSONString(authException).getBytes(StandardCharsets.UTF_8));
-            return false;
-        }
+//        String account = TokenUtils.getUserAccountByToken(headerToken);
+//        if (StringUtils.isEmpty(getCacheToken(account))) {
+//            AuthenticationException authException = new AuthenticationException(USER_LOGOUT);
+//            response.setStatus(HttpStatus.SC_UNAUTHORIZED);
+//            response.getOutputStream().write(JSON.toJSONString(authException).getBytes(StandardCharsets.UTF_8));
+//            return false;
+//        }
         return true;
     }
 
